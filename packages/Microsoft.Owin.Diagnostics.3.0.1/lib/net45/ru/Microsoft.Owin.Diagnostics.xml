@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Owin.Diagnostics</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Owin.Diagnostics.ErrorPageMiddleware">
+      <summary>Записывает синхронные и асинхронные исключения из конвейера и формирует ответы на ошибки HTML.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.ErrorPageMiddleware.#ctor(System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task},Microsoft.Owin.Diagnostics.ErrorPageOptions,Microsoft.Owin.Logging.ILogger,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Diagnostics.ErrorPageMiddleware" />.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.ErrorPageMiddleware.Invoke(System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>Обрабатывает отдельный запрос.</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.ErrorPageOptions">
+      <summary>Параметры ErrorPageMiddleware</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.ErrorPageOptions.#ctor">
+      <summary>Создает экземпляр с настройками параметров по умолчанию.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.ErrorPageOptions.SetDefaultVisibility(System.Boolean)">
+      <summary>Включает видимость по умолчанию для параметров, которые в противном случае не указываются.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowAll">
+      <summary>Возвращает новый экземпляр ErrorPageOptions со всеми параметрами видимости, включенными по умолчанию.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowCookies">
+      <summary>Включает перечисление любых проанализированных файлов cookie запросов.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowEnvironment">
+      <summary>Включает перечисление значений среды OWIN.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowExceptionDetails">
+      <summary>Включает отображение типов исключений, сообщений и трассировок стека.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowHeaders">
+      <summary>Включает перечисление заголовков запросов.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowQuery">
+      <summary>Включает перечисление любых проанализированных значений запросов.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.ShowSourceCode">
+      <summary>Включает отображение локального исходного кода, окружающего кадр стека исключения.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.ErrorPageOptions.SourceCodeLineCount">
+      <summary>Определяет, сколько строк кода нужно включить до и после строки кода, присутствующей в кадре стека исключения.Применяется только когда доступны символы и исходный код, на который ссылается трассировка стека исключения, присутствует на сервере.</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.WelcomePageMiddleware">
+      <summary>ПО промежуточного слоя предоставляет веб-страницу по умолчанию для новых приложений.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.WelcomePageMiddleware.#ctor(System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task},Microsoft.Owin.Diagnostics.WelcomePageOptions)">
+      <summary>Создает веб-страницу по умолчанию для новых приложений.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.WelcomePageMiddleware.Invoke(System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>Обрабатывает отдельный запрос.</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.WelcomePageOptions">
+      <summary>Параметры WelcomePageMiddleware.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.WelcomePageOptions.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Diagnostics.WelcomePageOptions" />.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.WelcomePageOptions.Path">
+      <summary>Указывает, для каких запросов будет выполнен отклик путей.Только точные совпадения.Оставьте значение null, чтобы обрабатывать все запросы.</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.BaseView">
+      <summary>Инфраструктура</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.#ctor"></member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.BaseView.Context">
+      <summary>Контекст запроса</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.Execute">
+      <summary>Выполнение отдельного запроса</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.Execute(Microsoft.Owin.IOwinContext)">
+      <summary>Выполнение отдельного запроса</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.BaseView.Output">
+      <summary>Выходной поток</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.BaseView.Request">
+      <summary>Запрос</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.BaseView.Response">
+      <summary>Ответ</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.Write(System.Object)">
+      <summary>Преобразование в строку и кодировка HTML</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.Write(System.String)">
+      <summary>Кодировка HTML и запись</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteAttribute``1(System.String,System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``0,System.Int32},System.Boolean})">
+      <typeparam name="T1"></typeparam>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteAttribute``2(System.String,System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``0,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``1,System.Int32},System.Boolean})">
+      <typeparam name="T1"></typeparam>
+      <typeparam name="T2"></typeparam>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteAttribute``3(System.String,System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``0,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``1,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``2,System.Int32},System.Boolean})">
+      <typeparam name="T1"></typeparam>
+      <typeparam name="T2"></typeparam>
+      <typeparam name="T3"></typeparam>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteAttribute``4(System.String,System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``0,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``1,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``2,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``3,System.Int32},System.Boolean})">
+      <typeparam name="T1"></typeparam>
+      <typeparam name="T2"></typeparam>
+      <typeparam name="T3"></typeparam>
+      <typeparam name="T4"></typeparam>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteAttribute``5(System.String,System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``0,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``1,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``2,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``3,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``4,System.Int32},System.Boolean})">
+      <typeparam name="T1"></typeparam>
+      <typeparam name="T2"></typeparam>
+      <typeparam name="T3"></typeparam>
+      <typeparam name="T4"></typeparam>
+      <typeparam name="T5"></typeparam>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteAttribute``6(System.String,System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``0,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``1,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``2,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``3,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``4,System.Int32},System.Boolean},System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{``5,System.Int32},System.Boolean})">
+      <typeparam name="T1"></typeparam>
+      <typeparam name="T2"></typeparam>
+      <typeparam name="T3"></typeparam>
+      <typeparam name="T4"></typeparam>
+      <typeparam name="T5"></typeparam>
+      <typeparam name="T6"></typeparam>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.BaseView.WriteLiteral(System.String)">
+      <summary>Запись указанного значения непосредственно в выходные данные</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.DiagnosticsPage"></member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.DiagnosticsPage.#ctor"></member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.DiagnosticsPage.Execute"></member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.ErrorDetails">
+      <summary>Содержит подробные сведения для отдельных сообщений об исключениях.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.ErrorDetails.#ctor"></member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorDetails.Error">
+      <summary>Отдельное исключение</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorDetails.StackFrames">
+      <summary>Сформированные кадры стека</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.ErrorPage"></member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.ErrorPage.#ctor"></member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.ErrorPage.Execute"></member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPage.Model">
+      <returns>Возвращает значение <see cref="T:Microsoft.Owin.Diagnostics.Views.ErrorPageModel" />.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.ErrorPageModel">
+      <summary>Содержит данные для отображения на странице ошибки.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Diagnostics.Views.ErrorPageModel" />.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.Cookies">
+      <summary>Файлы cookies запроса</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.Environment">
+      <summary>Среда запроса</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.ErrorDetails">
+      <summary>Подробные сведения о каждом исключении в стеке</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.Headers">
+      <summary>Заголовки запроса</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.Options">
+      <summary>Параметры для выходных данных, которые должны отображаться.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.ErrorPageModel.Query">
+      <summary>Разобранные данные запроса</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.StackFrame">
+      <summary>Подробные сведения о стеке исключений, используемые для создания представления</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.StackFrame.#ctor"></member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.ContextCode">
+      <returns>Возвращает значение <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.File">
+      <summary>Файл, содержащий инструкцию</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.Function">
+      <summary>Функция, содержащая инструкцию</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.Line">
+      <summary>Номер строки инструкции</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.PostContextCode">
+      <returns>Возвращает значение <see cref="T:System.Collections.Generic.IEnumerable`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.PreContextCode">
+      <returns>Возвращает значение <see cref="T:System.Collections.Generic.IEnumerable`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Diagnostics.Views.StackFrame.PreContextLine">
+      <summary>Строка, предшествующая строке кадра</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Diagnostics.Views.WelcomePage"></member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.WelcomePage.#ctor"></member>
+    <member name="M:Microsoft.Owin.Diagnostics.Views.WelcomePage.Execute"></member>
+    <member name="T:Owin.ErrorPageExtensions">
+      <summary>Методы расширений IAppBuilder для ErrorPageMiddleware.</summary>
+    </member>
+    <member name="M:Owin.ErrorPageExtensions.UseErrorPage(Owin.IAppBuilder)">
+      <summary>Записывает синхронные и асинхронные исключения из конвейера и формирует ответы на ошибки HTML.Полные сведения об ошибке показываются по умолчанию, только если для "host.AppMode" установлено значение "development" в свойствах IAppBuilder.Properties.</summary>
+    </member>
+    <member name="M:Owin.ErrorPageExtensions.UseErrorPage(Owin.IAppBuilder,Microsoft.Owin.Diagnostics.ErrorPageOptions)">
+      <summary>Записывает синхронные и асинхронные исключения из конвейера и формирует ответы на ошибки HTML.Полные сведения об ошибке показываются по умолчанию, только если для "host.AppMode" установлено значение "development" в свойствах IAppBuilder.Properties.</summary>
+    </member>
+    <member name="T:Owin.WelcomePageExtensions">
+      <summary>Расширения IAppBuilder для WelcomePageMiddleware.</summary>
+    </member>
+    <member name="M:Owin.WelcomePageExtensions.UseWelcomePage(Owin.IAppBuilder)">
+      <summary>Добавляет WelcomePageMiddleware в конвейер.</summary>
+    </member>
+    <member name="M:Owin.WelcomePageExtensions.UseWelcomePage(Owin.IAppBuilder,Microsoft.Owin.Diagnostics.WelcomePageOptions)">
+      <summary>Добавляет WelcomePageMiddleware в конвейер с заданными параметрами.</summary>
+    </member>
+    <member name="M:Owin.WelcomePageExtensions.UseWelcomePage(Owin.IAppBuilder,Microsoft.Owin.PathString)">
+      <summary>Добавляет WelcomePageMiddleware в конвейер по указанному пути.</summary>
+    </member>
+    <member name="M:Owin.WelcomePageExtensions.UseWelcomePage(Owin.IAppBuilder,System.String)">
+      <summary>Добавляет WelcomePageMiddleware в конвейер по указанному пути.</summary>
+    </member>
+  </members>
+</doc>

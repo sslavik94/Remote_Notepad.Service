@@ -1,0 +1,4 @@
+C:\Users\dev\Documents\Visual Studio 2015\Projects\Remote_Notepad.Service\Remote_Notepad.Service.Domain\bin\Debug\Remote_Notepad.Service.Domain.dll
+C:\Users\dev\Documents\Visual Studio 2015\Projects\Remote_Notepad.Service\Remote_Notepad.Service.Domain\bin\Debug\Remote_Notepad.Service.Domain.pdb
+C:\Users\dev\Documents\Visual Studio 2015\Projects\Remote_Notepad.Service\Remote_Notepad.Service.Domain\obj\Debug\Remote_Notepad.Service.Domain.dll
+C:\Users\dev\Documents\Visual Studio 2015\Projects\Remote_Notepad.Service\Remote_Notepad.Service.Domain\obj\Debug\Remote_Notepad.Service.Domain.pdb
